@@ -41,39 +41,44 @@ function ItemDetail() {
   if (!item) return <div className="p-4">Loading...</div>;
 
   return (
-    <div className="p-4 bg-violet-50 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4 text-violet-700">Edit Item</h1>
-      <form onSubmit={handleUpdate} className="mb-4">
-        <input
-          type="text"
-          placeholder="Item Title"
-          className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
-          value={editItem.title}
-          onChange={(e) =>
-            setEditItem({ ...editItem, title: e.target.value })
-          }
-          required
-        />
-        <textarea
-          placeholder="Item Description"
-          className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
-          value={editItem.description}
-          onChange={(e) =>
-            setEditItem({ ...editItem, description: e.target.value })
-          }
-          required
-        ></textarea>
-        <button className="bg-violet-500 hover:bg-violet-600 text-white rounded p-2 mr-2 transition duration-200" type="submit">
-          Update Item
-        </button>
-        <button
-          className="bg-violet-700 hover:bg-violet-800 text-white rounded p-2 transition duration-200"
-          type="button"
-          onClick={handleDelete}
-        >
-          Delete Item
-        </button>
-      </form>
+    <div className="bg-violet-50 min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-4xl bg-white py-30 px-10 rounded-[30px] shadow-lg">
+        <h1 className="text-2xl font-bold mb-4 text-violet-700">Edit Item</h1>
+        <form onSubmit={handleUpdate} className="mb-4">
+          <input
+            type="text"
+            placeholder="Item Title"
+            className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
+            value={editItem.title}
+            onChange={(e) =>
+              setEditItem({ ...editItem, title: e.target.value })
+            }
+            required
+          />
+          <textarea
+            placeholder="Item Description"
+            className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
+            value={editItem.description}
+            onChange={(e) =>
+              setEditItem({ ...editItem, description: e.target.value })
+            }
+            required
+          ></textarea>
+          <button
+            className="bg-violet-500 hover:bg-violet-600 text-white rounded p-2 mr-2 transition duration-200"
+            type="submit"
+          >
+            Update Item
+          </button>
+          <button
+            className="bg-violet-700 hover:bg-violet-800 text-white rounded p-2 transition duration-200"
+            type="button"
+            onClick={handleDelete}
+          >
+            Delete Item
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

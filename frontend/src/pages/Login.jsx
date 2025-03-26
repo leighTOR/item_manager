@@ -22,8 +22,8 @@ function Login() {
   };
 
   return (
-    <div className="max-w-sm mx-auto p-4 bg-violet-50 min-h-screen flex items-center justify-center">
-      <div className="w-full">
+    <div className="bg-violet-50 min-h-screen flex items-center justify-center p-4">
+      <div className="max-w-sm w-full bg-white py-30 px-10 rounded-[30px] shadow-lg">
         <h2 className="text-xl font-bold mb-4 text-violet-700 text-center">Login</h2>
         <form onSubmit={handleLogin}>
           <input
@@ -42,7 +42,10 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button className="bg-violet-500 hover:bg-violet-600 text-white rounded p-2 w-full transition duration-200" type="submit">
+          <button
+            className="bg-violet-500 hover:bg-violet-600 text-white rounded p-2 w-full transition duration-200"
+            type="submit"
+          >
             Login
           </button>
         </form>
