@@ -18,8 +18,8 @@ function Home() {
       const res = await api.get("/api/items/");
       setItems(res.data);
     } catch (error) {
-      console.error("Error creating item", error);
-      alert("Failed to create item.");
+      console.error("Error creating course", error);
+      alert("Failed to create course.");
     }
   };
 
@@ -30,7 +30,7 @@ function Home() {
         <form onSubmit={handleCreateItem} className="mb-4">
           <input
             type="text"
-            placeholder="Item Title"
+            placeholder="Course Title"
             className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
             value={newItem.title}
             onChange={(e) =>
@@ -39,7 +39,7 @@ function Home() {
             required
           />
           <textarea
-            placeholder="Item Description"
+            placeholder="Course Description"
             className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
             value={newItem.description}
             onChange={(e) =>
@@ -51,7 +51,7 @@ function Home() {
             className="bg-violet-500 hover:bg-violet-600 text-white rounded p-2 w-full transition duration-200"
             type="submit"
           >
-            Create Item
+            Create Course
           </button>
         </form>
         <div className="grid grid-cols-1 gap-4">

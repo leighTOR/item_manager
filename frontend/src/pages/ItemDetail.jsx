@@ -14,7 +14,7 @@ function ItemDetail() {
         setItem(res.data);
         setEditItem({ title: res.data.title, description: res.data.description });
       })
-      .catch((error) => console.error("Error fetching item", error));
+      .catch((error) => console.error("Error fetching course", error));
   }, [id]);
 
   const handleUpdate = async (e) => {
@@ -23,8 +23,8 @@ function ItemDetail() {
       await api.put(`/api/items/${id}/`, editItem);
       navigate("/");
     } catch (error) {
-      console.error("Error updating item", error);
-      alert("Failed to update item.");
+      console.error("Error updating course", error);
+      alert("Failed to update course.");
     }
   };
 
@@ -33,8 +33,8 @@ function ItemDetail() {
       await api.delete(`/api/items/${id}/`);
       navigate("/");
     } catch (error) {
-      console.error("Error deleting item", error);
-      alert("Failed to delete item.");
+      console.error("Error deleting course", error);
+      alert("Failed to delete course.");
     }
   };
 
@@ -43,11 +43,11 @@ function ItemDetail() {
   return (
     <div className="bg-violet-50 min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-4xl bg-white py-30 px-10 rounded-[30px] shadow-lg">
-        <h1 className="text-2xl font-bold mb-4 text-violet-700">Edit Item</h1>
+        <h1 className="text-2xl font-bold mb-4 text-violet-700">Edit Course</h1>
         <form onSubmit={handleUpdate} className="mb-4">
           <input
             type="text"
-            placeholder="Item Title"
+            placeholder="Course Title"
             className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
             value={editItem.title}
             onChange={(e) =>
@@ -56,7 +56,7 @@ function ItemDetail() {
             required
           />
           <textarea
-            placeholder="Item Description"
+            placeholder="Course Description"
             className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
             value={editItem.description}
             onChange={(e) =>
@@ -68,14 +68,14 @@ function ItemDetail() {
             className="bg-violet-500 hover:bg-violet-600 text-white rounded p-2 mr-2 transition duration-200"
             type="submit"
           >
-            Update Item
+            Update Course
           </button>
           <button
             className="bg-violet-700 hover:bg-violet-800 text-white rounded p-2 transition duration-200"
             type="button"
             onClick={handleDelete}
           >
-            Delete Item
+            Delete Course
           </button>
         </form>
         <div className="mt-4">
