@@ -24,13 +24,13 @@ function Home() {
   };
 
   return (
-    <div class="p-4">
-      <h1 class="text-2xl mb-4">Welcome!</h1>
-      <form onSubmit={handleCreateItem} class="mb-4">
+    <div className="p-4 bg-violet-50 min-h-screen">
+      <h1 className="text-2xl font-bold mb-4 text-violet-700">Welcome!</h1>
+      <form onSubmit={handleCreateItem} className="mb-4">
         <input
           type="text"
           placeholder="Item Title"
-          class="border p-2 w-full mb-2"
+          className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
           value={newItem.title}
           onChange={(e) =>
             setNewItem({ ...newItem, title: e.target.value })
@@ -39,25 +39,25 @@ function Home() {
         />
         <textarea
           placeholder="Item Description"
-          class="border p-2 w-full mb-2"
+          className="border border-violet-300 rounded p-2 w-full mb-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
           value={newItem.description}
           onChange={(e) =>
             setNewItem({ ...newItem, description: e.target.value })
           }
           required
         ></textarea>
-        <button class="bg-blue-500 text-white p-2" type="submit">
+        <button className="bg-violet-500 hover:bg-violet-600 text-white rounded p-2 w-full transition duration-200" type="submit">
           Create Item
         </button>
       </form>
-      <div class="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4">
         {items.map((item) => (
-          <div key={item.id} class="border p-4">
-            <h2 class="text-xl">{item.title}</h2>
-            <p>{item.description}</p>
+          <div key={item.id} className="border border-violet-300 rounded p-4 shadow-md bg-white">
+            <h2 className="text-xl font-semibold text-violet-800">{item.title}</h2>
+            <p className="text-violet-600">{item.description}</p>
             <Link
               to={`/item/${item.id}`}
-              class="text-blue-500 hover:underline mt-2 inline-block"
+              className="text-violet-500 hover:underline mt-2 inline-block"
             >
               View / Edit
             </Link>
