@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import api from "../api";
 
 function ItemDetail() {
@@ -78,6 +78,11 @@ function ItemDetail() {
             Delete Item
           </button>
         </form>
+        <div className="mt-4">
+          <Link to="/" className="text-violet-500 hover:underline">
+            Go back to home
+          </Link>
+        </div>
       </div>
     </div>
   );
